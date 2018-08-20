@@ -1,0 +1,286 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Untitled},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{Untitled}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{}
+  \preauthor{}\postauthor{}
+  \date{}
+  \predate{}\postdate{}
+
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching packages ---------------------------------------------------------- tidyverse 1.2.1 --
+\end{verbatim}
+
+\begin{verbatim}
+## √ ggplot2 2.2.1     √ purrr   0.2.4
+## √ tibble  1.4.2     √ dplyr   0.7.4
+## √ tidyr   0.8.0     √ stringr 1.3.1
+## √ readr   1.1.1     √ forcats 0.3.0
+\end{verbatim}
+
+\begin{verbatim}
+## -- Conflicts ------------------------------------------------------------- tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ccfraud <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{'creditcard.csv'}\NormalTok{)}
+\CommentTok{#ccfraud$Class <- as.factor(ccfraud$Class)}
+\CommentTok{#levels(ccfraud$Class) <- c("Genuine", "Fraud")}
+\NormalTok{ccfraud }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{summary}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       Time              V1                  V2           
+##  Min.   :     0   Min.   :-56.40751   Min.   :-72.71573  
+##  1st Qu.: 54202   1st Qu.: -0.92037   1st Qu.: -0.59855  
+##  Median : 84692   Median :  0.01811   Median :  0.06549  
+##  Mean   : 94814   Mean   :  0.00000   Mean   :  0.00000  
+##  3rd Qu.:139320   3rd Qu.:  1.31564   3rd Qu.:  0.80372  
+##  Max.   :172792   Max.   :  2.45493   Max.   : 22.05773  
+##        V3                 V4                 V5            
+##  Min.   :-48.3256   Min.   :-5.68317   Min.   :-113.74331  
+##  1st Qu.: -0.8904   1st Qu.:-0.84864   1st Qu.:  -0.69160  
+##  Median :  0.1799   Median :-0.01985   Median :  -0.05434  
+##  Mean   :  0.0000   Mean   : 0.00000   Mean   :   0.00000  
+##  3rd Qu.:  1.0272   3rd Qu.: 0.74334   3rd Qu.:   0.61193  
+##  Max.   :  9.3826   Max.   :16.87534   Max.   :  34.80167  
+##        V6                 V7                 V8           
+##  Min.   :-26.1605   Min.   :-43.5572   Min.   :-73.21672  
+##  1st Qu.: -0.7683   1st Qu.: -0.5541   1st Qu.: -0.20863  
+##  Median : -0.2742   Median :  0.0401   Median :  0.02236  
+##  Mean   :  0.0000   Mean   :  0.0000   Mean   :  0.00000  
+##  3rd Qu.:  0.3986   3rd Qu.:  0.5704   3rd Qu.:  0.32735  
+##  Max.   : 73.3016   Max.   :120.5895   Max.   : 20.00721  
+##        V9                 V10                 V11          
+##  Min.   :-13.43407   Min.   :-24.58826   Min.   :-4.79747  
+##  1st Qu.: -0.64310   1st Qu.: -0.53543   1st Qu.:-0.76249  
+##  Median : -0.05143   Median : -0.09292   Median :-0.03276  
+##  Mean   :  0.00000   Mean   :  0.00000   Mean   : 0.00000  
+##  3rd Qu.:  0.59714   3rd Qu.:  0.45392   3rd Qu.: 0.73959  
+##  Max.   : 15.59500   Max.   : 23.74514   Max.   :12.01891  
+##       V12                V13                V14          
+##  Min.   :-18.6837   Min.   :-5.79188   Min.   :-19.2143  
+##  1st Qu.: -0.4056   1st Qu.:-0.64854   1st Qu.: -0.4256  
+##  Median :  0.1400   Median :-0.01357   Median :  0.0506  
+##  Mean   :  0.0000   Mean   : 0.00000   Mean   :  0.0000  
+##  3rd Qu.:  0.6182   3rd Qu.: 0.66251   3rd Qu.:  0.4931  
+##  Max.   :  7.8484   Max.   : 7.12688   Max.   : 10.5268  
+##       V15                V16                 V17           
+##  Min.   :-4.49894   Min.   :-14.12985   Min.   :-25.16280  
+##  1st Qu.:-0.58288   1st Qu.: -0.46804   1st Qu.: -0.48375  
+##  Median : 0.04807   Median :  0.06641   Median : -0.06568  
+##  Mean   : 0.00000   Mean   :  0.00000   Mean   :  0.00000  
+##  3rd Qu.: 0.64882   3rd Qu.:  0.52330   3rd Qu.:  0.39968  
+##  Max.   : 8.87774   Max.   : 17.31511   Max.   :  9.25353  
+##       V18                 V19                 V20           
+##  Min.   :-9.498746   Min.   :-7.213527   Min.   :-54.49772  
+##  1st Qu.:-0.498850   1st Qu.:-0.456299   1st Qu.: -0.21172  
+##  Median :-0.003636   Median : 0.003735   Median : -0.06248  
+##  Mean   : 0.000000   Mean   : 0.000000   Mean   :  0.00000  
+##  3rd Qu.: 0.500807   3rd Qu.: 0.458949   3rd Qu.:  0.13304  
+##  Max.   : 5.041069   Max.   : 5.591971   Max.   : 39.42090  
+##       V21                 V22                  V23           
+##  Min.   :-34.83038   Min.   :-10.933144   Min.   :-44.80774  
+##  1st Qu.: -0.22839   1st Qu.: -0.542350   1st Qu.: -0.16185  
+##  Median : -0.02945   Median :  0.006782   Median : -0.01119  
+##  Mean   :  0.00000   Mean   :  0.000000   Mean   :  0.00000  
+##  3rd Qu.:  0.18638   3rd Qu.:  0.528554   3rd Qu.:  0.14764  
+##  Max.   : 27.20284   Max.   : 10.503090   Max.   : 22.52841  
+##       V24                V25                 V26          
+##  Min.   :-2.83663   Min.   :-10.29540   Min.   :-2.60455  
+##  1st Qu.:-0.35459   1st Qu.: -0.31715   1st Qu.:-0.32698  
+##  Median : 0.04098   Median :  0.01659   Median :-0.05214  
+##  Mean   : 0.00000   Mean   :  0.00000   Mean   : 0.00000  
+##  3rd Qu.: 0.43953   3rd Qu.:  0.35072   3rd Qu.: 0.24095  
+##  Max.   : 4.58455   Max.   :  7.51959   Max.   : 3.51735  
+##       V27                  V28                Amount        
+##  Min.   :-22.565679   Min.   :-15.43008   Min.   :    0.00  
+##  1st Qu.: -0.070840   1st Qu.: -0.05296   1st Qu.:    5.60  
+##  Median :  0.001342   Median :  0.01124   Median :   22.00  
+##  Mean   :  0.000000   Mean   :  0.00000   Mean   :   88.35  
+##  3rd Qu.:  0.091045   3rd Qu.:  0.07828   3rd Qu.:   77.17  
+##  Max.   : 31.612198   Max.   : 33.84781   Max.   :25691.16  
+##      Class         
+##  Min.   :0.000000  
+##  1st Qu.:0.000000  
+##  Median :0.000000  
+##  Mean   :0.001728  
+##  3rd Qu.:0.000000  
+##  Max.   :1.000000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ccfraud }\OperatorTok{%>%}
+\StringTok{  }\NormalTok{head}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   Time         V1          V2        V3         V4          V5          V6
+## 1    0 -1.3598071 -0.07278117 2.5363467  1.3781552 -0.33832077  0.46238778
+## 2    0  1.1918571  0.26615071 0.1664801  0.4481541  0.06001765 -0.08236081
+## 3    1 -1.3583541 -1.34016307 1.7732093  0.3797796 -0.50319813  1.80049938
+## 4    1 -0.9662717 -0.18522601 1.7929933 -0.8632913 -0.01030888  1.24720317
+## 5    2 -1.1582331  0.87773675 1.5487178  0.4030339 -0.40719338  0.09592146
+## 6    2 -0.4259659  0.96052304 1.1411093 -0.1682521  0.42098688 -0.02972755
+##            V7          V8         V9         V10        V11         V12
+## 1  0.23959855  0.09869790  0.3637870  0.09079417 -0.5515995 -0.61780086
+## 2 -0.07880298  0.08510165 -0.2554251 -0.16697441  1.6127267  1.06523531
+## 3  0.79146096  0.24767579 -1.5146543  0.20764287  0.6245015  0.06608369
+## 4  0.23760894  0.37743587 -1.3870241 -0.05495192 -0.2264873  0.17822823
+## 5  0.59294075 -0.27053268  0.8177393  0.75307443 -0.8228429  0.53819555
+## 6  0.47620095  0.26031433 -0.5686714 -0.37140720  1.3412620  0.35989384
+##          V13        V14        V15        V16         V17         V18
+## 1 -0.9913898 -0.3111694  1.4681770 -0.4704005  0.20797124  0.02579058
+## 2  0.4890950 -0.1437723  0.6355581  0.4639170 -0.11480466 -0.18336127
+## 3  0.7172927 -0.1659459  2.3458649 -2.8900832  1.10996938 -0.12135931
+## 4  0.5077569 -0.2879237 -0.6314181 -1.0596472 -0.68409279  1.96577500
+## 5  1.3458516 -1.1196698  0.1751211 -0.4514492 -0.23703324 -0.03819479
+## 6 -0.3580907 -0.1371337  0.5176168  0.4017259 -0.05813282  0.06865315
+##           V19         V20          V21          V22         V23
+## 1  0.40399296  0.25141210 -0.018306778  0.277837576 -0.11047391
+## 2 -0.14578304 -0.06908314 -0.225775248 -0.638671953  0.10128802
+## 3 -2.26185710  0.52497973  0.247998153  0.771679402  0.90941226
+## 4 -1.23262197 -0.20803778 -0.108300452  0.005273597 -0.19032052
+## 5  0.80348692  0.40854236 -0.009430697  0.798278495 -0.13745808
+## 6 -0.03319379  0.08496767 -0.208253515 -0.559824796 -0.02639767
+##           V24        V25        V26          V27         V28 Amount Class
+## 1  0.06692807  0.1285394 -0.1891148  0.133558377 -0.02105305 149.62     0
+## 2 -0.33984648  0.1671704  0.1258945 -0.008983099  0.01472417   2.69     0
+## 3 -0.68928096 -0.3276418 -0.1390966 -0.055352794 -0.05975184 378.66     0
+## 4 -1.17557533  0.6473760 -0.2219288  0.062722849  0.06145763 123.50     0
+## 5  0.14126698 -0.2060096  0.5022922  0.219422230  0.21515315  69.99     0
+## 6 -0.37142658 -0.2327938  0.1059148  0.253844225  0.08108026   3.67     0
+\end{verbatim}
+
+
+\end{document}

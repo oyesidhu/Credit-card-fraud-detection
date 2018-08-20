@@ -1,0 +1,30 @@
+---
+title: "Untitled"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+ccfraud <- read.csv('creditcard.csv')
+#ccfraud$Class <- as.factor(ccfraud$Class)
+#levels(ccfraud$Class) <- c("Genuine", "Fraud")
+ccfraud %>%
+  summary()
+
+```
+
+```{r}
+ccfraud %>%
+  head
+```
+
